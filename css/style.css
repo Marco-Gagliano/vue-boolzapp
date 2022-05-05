@@ -66,16 +66,57 @@ header {
 }
 
 
-/* /COL-RIGHT */
+/* COL-RIGHT CHATZONE*/
+.col-right .chatzone {
+  background-image: url(/img/mine.jpg);
+  display: flex;
+  justify-content: center;
+  
+}
+
+.chatzone .messaggio-utente {
+  display: flex;
+  justify-content: center;flex-direction: column;
+  height: 20vh;
+}
+
+.chatzone .messaggio-pers {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+}
+
+
+/* COL-RIGHT CHATBAR*/
 
 .col-right .chatbar {
   display: flex;
   justify-content: space-between;
+  margin: 0 15px;background-color: #F2EEE9;
+  height: 65px;
+}
+
+.chatbar i {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   margin: 0 15px;
+  font-size: 20px;
+  
 }
-.col-right .chatzone {
-  background-image: url(/img/mine.jpg);
+
+.chatbar input {
+  width: 80%;
+  margin: 5px 0;
+  border: 0px;
+  border-radius: 5px;
+  padding-left: 5px;
 }
+
+
+/* /COL-RIGHT */
+
 
 
 
