@@ -7,6 +7,10 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <link rel="stylesheet" href="css/style.css">
   
@@ -21,54 +25,102 @@
     <main class="chatbox">
 
       <section class="col-left">
-        <div class="h80 debug-green">NOME UTENTE</div>
 
-        <div class="h80 debug-yellow">
-          <p>Ricevi notifiche di nuovi messaggi</p>
-          <p>Attiva notifiche desktop</p>
+
+        <div class="nome-utente">
+
+          <div class="nome-utente-logo">
+            <img src="img/avatar_1.jpg" alt="">
+          </div>
+          
+          <div class="nome-utente-pers">
+            <h3>Nome Utente</h3>
+          </div>
+
+          <div class="nome-utente-icone">
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+
         </div>
 
-        <div class="ricerca h80 debug-red">
-          <p>Cerca o inizia una nuova ricerca</p>
+
+        <div class="notifiche">
+
+          <div>
+            <i class="fa-solid fa-bell-slash"></i>
+          </div>
+
+          <div>
+            <h4>Ricevi notifiche di nuovi messaggi</h4>
+            <p class="notifiche-desktop">Attiva notifiche desktop</p>
+          </div>
+
+        </div>
+
+        <div class="ricerca">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input v-model="" type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
 
         <div class="contatti debug-blue full">
-          <div class="h80 debug-pink">
-            <p>MICHELE</p>
-            <p>Tutto fatto!</p>
+
+          <div class="contatto debug-pink">
+
+            <div class="contatto-logo">
+              <img src="img/avatar_3.jpg" alt="">
+            </div>
+
+            <div class="contatto-info">
+              <h3>MICHELE</h3>
+              <p>Tutto fatto!</p>
+            </div>
+            
+            <div class="contatto-accesso">
+              <span>10/01/2020 12:25:55</span>
+              
+
+            </div>
+
           </div>
-          <div class="h80 debug-pink">
-            <p>MICHELE</p>
-            <p>Mi piacerebbe davvero tanto</p>
-          </div>
-          <div class="h80 debug-pink">
-            <p>MICHELE</p>
-            <p>ah scusa!</p>
-          </div>
-          <div class="h80 debug-pink">
-            <p>MICHELE</p>
-            <p>Si, ma preferirei di no</p>
-          </div>
+         
+          
         </div>
 
       </section>
 
       <section class="col-right">
 
-        <div class="h80 debug-red">
-          <p>Luisa</p>
-          <p>ultimo accesso oggi alle  </p>
+        <div class="utente-chat">
+
+          <div class="utente-immagine">
+            <img src="img/avatar_2.jpg" alt="">
+          </div>
+          
+          <div class="utente-accesso">
+            <h3>Luisa</h3>
+            <p>ultimo accesso oggi alle</p>
+          </div>
+
+          <div class="utente-allegati">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-paperclip"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+
         </div>
 
         <div class="chatzone debug-green full">
           
-          <div class="debug-red messaggio-utente">ciao bello de casa
+          <div>
+            <div class="debug-red messaggio-utente">ciao bello de casa</div>
+          </div>
 
+          <div>
+            <div class="debug-red messaggio-pers">ciao ciao</div>
           </div>
-          <div class="debug-red messaggio-pers">
-            ciao ciao
-            
-          </div>
+
         </div>
         
 

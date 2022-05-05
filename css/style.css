@@ -8,23 +8,23 @@ box-sizing: border-box;
 
 body {
   position: relative;
+  font-family: 'Lato', sans-serif;
 }
 
 .chatbox {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 45%;
+  left: 9%;
   height: 90vh;
   width: 80%;
   margin: 0 auto;
-  background-color: rgb(230, 122, 122);
-  border: 2px solid black;
+  border: 1px solid black;
   display: flex;
   justify-content: center;
 }
 
 .col-left, .col-right {
-  width: 50%;
+
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,8 @@ header {
 /* COL-LEFT */
 
 .col-left {
-  width: 40%;
+  width: 35%;
+  background-color: #EAEAEA;
 }
 
 .col-left .contatti{
@@ -59,24 +60,172 @@ header {
 /* /COL-LEFT */
 
 
-/* COL-RIGHT */
+/* COL-LEFT - NOME UTENTE */
 
-.col-right {
-  width: 60%;
+.nome-utente {
+  display: flex;
+  align-items: center;
+  background-color: #E9E9E9;
+  height: 100px;
+}
+
+.nome-utente-logo img {
+  width: 6%;
+  flex-shrink: 1;
+}
+
+.nome-utente-icone {
+  color: #AFB0B0;
+  flex-grow: 1;
+  text-align: end;
+  /* background-color: blue ; */
+}
+
+.nome-utente-icone i {
+  margin-right: 15px;
+  font-size: 22px;
+}
+
+/* COL-LEFT - NOME UTENTE */
+
+
+/* COL-LEFT - NOTIFICHE */
+
+.notifiche {
+  background-color: #8EDAFB;
+  height: 100px;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+
+}
+
+.notifiche i {
+  color: #8EDAFB;
+  background-color: #F2FAFE;
+  padding: 10px;
+  margin: 15px;
+  font-size: 20px;
+  border-radius: 100%
+}
+
+.notifiche-desktop {
+  text-decoration: underline;
+  color: #6496AD;
+}
+
+/* /COL-LEFT - NOTIFICHE*/
+
+
+/* COL-LEFT - RICERCA*/
+
+.ricerca {
+  background-color: #ffffff;
+  border-radius: 5px;
+  /* border: 1px solid black; */
+}
+
+.ricerca i {
+  color: #AFB0B0;
+  margin: 0 10px;
+}
+
+.ricerca input {
+  border: 0px;
+  padding: 8px 0;
+  margin: 5px 0;
+  width: 88%;
+  border-radius: 5px;
+  font-size: 14px;
+  padding-left: 3px;
+}
+/* /COL-LEFT - RICERCA*/
+
+
+/* COL-LEFT - CONTATTI*/
+
+.contatti {
+  height: 80px;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.contatto-logo img {
+  width: 65px;
+  margin: 0 8px;
+  border-radius: 50px;
+}
+.contatto-accesso {
+  text-align: end;
+  align-items: flex-end;
 }
 
 
-/* COL-RIGHT CHATZONE*/
-.col-right .chatzone {
+/* /COL-LEFT - CONTATTI*/
+
+
+/* COL-RIGHT */
+
+.col-right {
+  width: 65%;
+}
+
+
+/* COL-RIGHT - UTENTE CHAT*/
+
+.utente-chat {
+  display: flex;
+  align-items: center;
+  height: 90px;
+  background-color: #E9E9E9;
+}
+
+.utente-immagine {
+  margin: 0 8px;
+}
+
+.utente-immagine img{
+  width: 60px;
+  border-radius: 50px;
+}
+
+.utente-accesso {
+  display: flex;
+  flex-direction: column;
+}
+
+.utente-accesso p {
+  color: #6D7478;
+}
+
+.utente-allegati {
+  flex-grow: 1;
+  text-align: end;
+}
+
+.utente-allegati i {
+  color:#AFB0B0;
+  margin-right: 22px;
+  font-size: 22px;
+}
+
+/* COL-RIGHT - UTENTE CHAT*/
+
+
+/* COL-RIGHT - CHATZONE*/
+.chatzone {
   background-image: url(/img/mine.jpg);
   display: flex;
-  justify-content: center;
-  
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .chatzone .messaggio-utente {
   display: flex;
-  justify-content: center;flex-direction: column;
+  justify-content: center;
+  flex-direction: row;
   height: 20vh;
 }
 
@@ -86,13 +235,15 @@ header {
   height: 20vh;
 }
 
+/* /COL-RIGHT - CHATZONE*/
 
-/* COL-RIGHT CHATBAR*/
 
-.col-right .chatbar {
+/* COL-RIGHT - CHATBAR*/
+
+.chatbar {
   display: flex;
   justify-content: space-between;
-  margin: 0 15px;background-color: #F2EEE9;
+  background-color: #F2EEE9;
   height: 65px;
 }
 
@@ -101,72 +252,49 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0 15px;
-  font-size: 20px;
-  
+  margin: 0 28px;
+  font-size: 25px;
 }
 
 .chatbar input {
-  width: 80%;
+  width: 82%;
   margin: 5px 0;
   border: 0px;
   border-radius: 5px;
   padding-left: 5px;
 }
 
+/* /COL-RIGHT - CHATBAR*/
 
 /* /COL-RIGHT */
 
 
+ 
 
-
-
-
-
-
-
-
-/* C */
-
-
+/* DEBUG */
 
 .h50 {
    height: 50px;
-   
 }
 
 .h80 {
  height: 80px;
- 
 }
 
 .h100 {
  height: 100px;
- 
 }
 
 .h120 {
  height: 120px;
- 
 }
 
 .h150 {
  height: 150px;
- 
 }
 
 .debug-red {
   background-color: red;
-  border: 1px solid black;
-}
-
-.debug-green {
-  background-color: green;
-  border: 1px solid black;
-}
-
-.debug-yellow {
-  background-color: yellow;
   border: 1px solid black;
 }
 
@@ -183,3 +311,5 @@ header {
 .full {
   height: 100%;
 }
+
+/* /DEBUG */
