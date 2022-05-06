@@ -5,6 +5,25 @@ Milestone 1:
 
 - Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
 
+Milestone 2
+Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+Click sul contatto mostra la conversazione del contatto cliccato
+
+Milestone 3
+Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+Milestone 4
+Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+Milestone 5 - opzionale
+Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
+
+Procedete un Melestone alla volta fate i commiti seprata per ogni Milestone (ovviamente oltre a tutti quelli intermedi).
+
+Le “finiture” lasciatele alla fine e non state a impazzire se ad esempio le scrollbar non si visualizzano perfettamente o cose simili. Se ci sarà tempo ala fine si possono anche curare questi aspetti ma date la priorità a tutte le funzionalità richieste.
+
 Note:
 non è importante per ora che tutti gli elementi grafici siano presenti, l’importante che la struttura sia come da specifiche
 l’elenco degli utenti deve essere generato con un v-for e stampare almeno il nome e l’avatar (ultimo messaggio e data per ora possono essere fake)
