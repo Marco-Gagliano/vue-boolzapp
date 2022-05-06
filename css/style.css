@@ -9,6 +9,7 @@ box-sizing: border-box;
 body {
   position: relative;
   font-family: 'Lato', sans-serif;
+  background-color: #AFB0B0;
 }
 
 .chatbox {
@@ -18,17 +19,16 @@ body {
   height: 90vh;
   width: 80%;
   margin: 0 auto;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
 }
 
 .col-left, .col-right {
-
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
 }
+
+/* /GENERAL PRESETS */
 
 
 /* HEADER */
@@ -45,16 +45,9 @@ header {
 
 .col-left {
   width: 35%;
-  background-color: #EAEAEA;
-}
-
-.col-left .contatti{
-  margin-right: 10px;
-}
-
-.col-left .ricerca{
-  margin: 5px;
-  text-align: center;
+  background-color: #f9f9f9;
+  min-width: 340px;
+  border-right: 1px solid #AFB0B0;
 }
 
 /* /COL-LEFT */
@@ -63,27 +56,35 @@ header {
 /* COL-LEFT - NOME UTENTE */
 
 .nome-utente {
+  background-color: #E9E9E9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nome-utente-sx {
+  width: 70%;
   display: flex;
   align-items: center;
-  background-color: #E9E9E9;
-  height: 100px;
 }
 
-.nome-utente-logo img {
-  width: 6%;
-  flex-shrink: 1;
+.nome-utente-sx img {
+  width: 65px;
+  border-radius: 50px;
+  margin: 10px 18px;
 }
 
-.nome-utente-icone {
+.nome-utente-dx {
+  display: flex;
+  justify-content: end;
   color: #AFB0B0;
-  flex-grow: 1;
-  text-align: end;
-  /* background-color: blue ; */
+  width: 30%;
 }
 
-.nome-utente-icone i {
+.nome-utente-dx i {
   margin-right: 15px;
   font-size: 22px;
+  justify-content: flex-end;
 }
 
 /* COL-LEFT - NOME UTENTE */
@@ -95,9 +96,7 @@ header {
   background-color: #8EDAFB;
   height: 100px;
   display: flex;
-  /* justify-content: space-around; */
   align-items: center;
-
 }
 
 .notifiche i {
@@ -112,6 +111,7 @@ header {
 .notifiche-desktop {
   text-decoration: underline;
   color: #6496AD;
+  cursor: pointer;
 }
 
 /* /COL-LEFT - NOTIFICHE*/
@@ -121,8 +121,9 @@ header {
 
 .ricerca {
   background-color: #ffffff;
-  border-radius: 5px;
-  /* border: 1px solid black; */
+  margin: 5px;
+  text-align: center;
+  background-color: #FFFFFF;
 }
 
 .ricerca i {
@@ -134,34 +135,40 @@ header {
   border: 0px;
   padding: 8px 0;
   margin: 5px 0;
-  width: 88%;
+  width: 85%;
   border-radius: 5px;
   font-size: 14px;
   padding-left: 3px;
 }
+
 /* /COL-LEFT - RICERCA*/
 
 
 /* COL-LEFT - CONTATTI*/
 
 .contatti {
+  height: 50px;
+  overflow-y: auto;
+}
+
+.contatto {
   height: 80px;
-  border: 1px solid white;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
+  padding-top: 8px;
+  border-bottom: 1px solid #AFB0B0;
 }
 
 .contatto-logo img {
   width: 65px;
-  margin: 0 8px;
+  margin: 0 18px;
   border-radius: 50px;
-}
-.contatto-accesso {
-  text-align: end;
-  align-items: flex-end;
+  float: left;
 }
 
+.contatto-data {
+  font-size: 10px;
+  float: right;
+  margin-right: 5px;
+}
 
 /* /COL-LEFT - CONTATTI*/
 
@@ -170,7 +177,10 @@ header {
 
 .col-right {
   width: 65%;
+  min-width: 500px;
 }
+
+/* /COL-RIGHT */
 
 
 /* COL-RIGHT - UTENTE CHAT*/
@@ -215,30 +225,42 @@ header {
 
 
 /* COL-RIGHT - CHATZONE*/
+
 .chatzone {
   background-image: url(/img/mine.jpg);
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  overflow-y: auto;
 }
 
-.chatzone .messaggio-utente {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  height: 20vh;
+.chatzone .messaggio {
+  margin: 15px 25px;
+  min-width: 38%;
+  max-width: 62%;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  clear: both;
 }
 
-.chatzone .messaggio-pers {
-  display: flex;
-  flex-direction: column;
-  height: 20vh;
+.chatzone .sent {
+  background-color: green;
+  float: right;
+}
+.chatzone .received {
+  background-color: rgb(146, 255, 146);
+  float: left;
+}
+
+.chatzone .messaggio .messaggio-data {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  font-size: 10px;
 }
 
 /* /COL-RIGHT - CHATZONE*/
 
 
-/* COL-RIGHT - CHATBAR*/
+/* COL-RIGHT - CHATZONE*/
 
 .chatbar {
   display: flex;
@@ -254,6 +276,7 @@ header {
   flex-direction: column;
   margin: 0 28px;
   font-size: 25px;
+  cursor: pointer;
 }
 
 .chatbar input {
@@ -266,10 +289,6 @@ header {
 
 /* /COL-RIGHT - CHATBAR*/
 
-/* /COL-RIGHT */
-
-
- 
 
 /* DEBUG */
 

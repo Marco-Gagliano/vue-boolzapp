@@ -24,28 +24,28 @@
 
     <main class="chatbox">
 
+      <!-- COL-LEFT -->
       <section class="col-left">
 
-
+        <!-- COL-LEFT - NOME UTENTE -->
         <div class="nome-utente">
 
-          <div class="nome-utente-logo">
+          <div class="nome-utente-sx">
             <img src="img/avatar_1.jpg" alt="">
+            <span>Nome Utente</span>
           </div>
           
-          <div class="nome-utente-pers">
-            <h3>Nome Utente</h3>
-          </div>
-
-          <div class="nome-utente-icone">
+          <div class="nome-utente-dx">
             <i class="fa-solid fa-circle-notch"></i>
             <i class="fa-solid fa-message"></i>
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
 
         </div>
+        <!-- /COL-LEFT - NOME UTENTE -->
 
 
+        <!-- COL-LEFT - NOTIFICHE -->
         <div class="notifiche">
 
           <div>
@@ -58,40 +58,72 @@
           </div>
 
         </div>
+        <!-- /COL-LEFT - NOTIFICHE -->
 
+
+        <!-- COL-LEFT - RICERCA -->
         <div class="ricerca">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input v-model="" type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
+        <!-- /COL-LEFT - RICERCA -->
 
-        <div class="contatti debug-blue full">
 
-          <div class="contatto debug-pink">
+        <!-- COL-LEFT - CONTATTI -->
+        <div class="contatti  full">
+
+          <div class="contatto">
 
             <div class="contatto-logo">
               <img src="img/avatar_3.jpg" alt="">
             </div>
 
             <div class="contatto-info">
-              <h3>MICHELE</h3>
+
+              <h3>
+                <span>Michele</span>
+                <span class="contatto-data">20/20/2020 20:20:20</span>
+              </h3>
+
               <p>Tutto fatto!</p>
-            </div>
-            
-            <div class="contatto-accesso">
-              <span>10/01/2020 12:25:55</span>
-              
 
             </div>
+            
+
+          </div>
+
+          <div class="contatto">
+
+            <div class="contatto-logo">
+              <img src="img/avatar_3.jpg" alt="">
+            </div>
+
+            <div class="contatto-info">
+
+              <h3>
+                <span>Michele</span>
+                <span class="contatto-data">20/20/2020 20:20:20</span>
+              </h3>
+
+              <p>Tutto fatto!</p>
+
+            </div>
+            
 
           </div>
          
           
         </div>
+        <!-- /COL-LEFT - CONTATTI -->
 
       </section>
+      <!-- /COL-LEFT -->
 
+
+      <!-- COL-RIGHT -->
       <section class="col-right">
 
+        <!-- COL-RIGHT - UTENTE CHAT -->
         <div class="utente-chat">
 
           <div class="utente-immagine">
@@ -110,26 +142,40 @@
           </div>
 
         </div>
+        <!-- /COL-RIGHT - UTENTE CHAT -->
 
+
+        <!-- /COL-RIGHT - CHATZONE -->
         <div class="chatzone debug-green full">
           
-          <div>
-            <div class="debug-red messaggio-utente">ciao bello de casa</div>
+          <div class="messaggio sent">
+
+            <div class="messaggio-testo">ciao  bello de casa</div>
+            <div class="messaggio-data">20/20/2020 20:00:00</div>
+
           </div>
 
-          <div>
-            <div class="debug-red messaggio-pers">ciao ciao</div>
+          <div class="messaggio received">
+
+            <div class="messaggio-testo">ciao bello de casa</div>
+            <div class="messaggio-data">20/20/2020 20:00:00</div>
+
           </div>
 
         </div>
+        <!-- /COL-RIGHT - CHATZONE -->
         
 
+        <!-- COL-RIGHT - CHATZONE -->
         <div class="chatbar">
           <i class="fa-regular fa-face-smile"></i>
           <input v-model="" type="text" placeholder="Scrivi un messaggio">
           <i class="fa-solid fa-microphone"></i>
         </div>
+        <!-- /COL-RIGHT - CHATZONE -->
+        
       </section>
+      <!-- /COL-RIGHT -->
 
     </main>
 
