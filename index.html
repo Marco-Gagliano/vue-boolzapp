@@ -86,10 +86,8 @@
 
               <h3>
                 <span>{{user.name}}</span>
-                <span class="contatto-data"
-                      
-                      >
-                      {{user.messages[user.messages.length - 1].date}}
+                <span class="contatto-data">
+                  {{user.messages[user.messages.length - 1].date}}
                 </span>
               </h3>
 
@@ -134,8 +132,7 @@
 
 
         <!-- /COL-RIGHT - CHATZONE -->
-        <div  class="chatzone debug-green full"
-        >
+        <div  class="chatzone debug-green full">
           <div  v-for="(text, index) in utenti[utenteAttivo].messages"
                 class="messaggio"
                 :class="text.status">
@@ -156,13 +153,16 @@
         <!-- /COL-RIGHT - CHATZONE -->
         
 
-        <!-- COL-RIGHT - CHATZONE -->
-        <div class="chatbar">
+        <!-- COL-RIGHT - CHATBAR -->
+        <div class="chatbar"
+              @keyup.enter="inviaMessaggio()">
+
           <i class="fa-regular fa-face-smile"></i>
-          <input type="text" placeholder="Scrivi un messaggio">
+          <input v-model="nuovoMessaggio" type="text" placeholder="Scrivi un messaggio">
           <i class="fa-solid fa-microphone"></i>
         </div>
-        <!-- /COL-RIGHT - CHATZONE -->
+
+        <!-- /COL-RIGHT - CHATBAR -->
         
       </section>
       <!-- /COL-RIGHT -->

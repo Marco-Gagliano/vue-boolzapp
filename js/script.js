@@ -193,6 +193,7 @@ const app = new Vue({
       avatar: '_8',
       visible: true,
       messages: [
+        // nuovomessaggio
         {
         date: '10/01/2020 15:30:55',
         message: 'Ciao, andiamo a mangiare la pizza stasera?',
@@ -213,8 +214,40 @@ const app = new Vue({
   },
 
   methods: {
+
+    inviaMessaggio() {
+
+      const nuovoOggetto = 
+        {
+        date: '03/01/2022 20:20:55',
+        message: this.nuovoMessaggio,
+        status: 'sent'
+        }
+
+
+      this.utenti[this.utenteAttivo].messages.push(nuovoOggetto);
+      this.nuovoMessaggio = '';
+
+      this.riceviMessaggio()
+    },
+
+    riceviMessaggio() {
+     setTimeout(()=> {
+       const riceviMessaggio = 
+       {
+        date: '03/01/2022 20:20:55',
+        message: 'Ok!',
+        status: 'received'
+      }
+
+      this.utenti[this.utenteAttivo].messages.push(riceviMessaggio);
+
+
+     },1000)
+     }
+    }
   
   
   
 
-}},)
+});
