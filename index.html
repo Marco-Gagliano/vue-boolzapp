@@ -32,7 +32,7 @@
 
           <div class="nome-utente-sx">
             <img src="img/avatar_1.jpg" alt="">
-            <span>Nome Utente</span>
+            <span>{{users.name}}</span>
           </div>
           
           <div class="nome-utente-dx">
@@ -64,55 +64,43 @@
         <!-- COL-LEFT - RICERCA -->
         <div class="ricerca">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input v-model="" type="text" placeholder="Cerca o inizia una nuova chat">
+            <input v-model.trim="ricercaUtente"  type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <!-- /COL-LEFT - RICERCA -->
 
 
         <!-- COL-LEFT - CONTATTI -->
-        <div class="contatti  full">
+        <div class="contatti full">
 
-          <div class="contatto">
+          <div  class="contatto" 
+                v-for="(user, index) in utenti" 
+                v-show="user.visible"
+                :class="utenteAttivo === index ? 'contatto-selezionato' : '' "
+                @click="utenteAttivo = index">
 
             <div class="contatto-logo">
-              <img src="img/avatar_3.jpg" alt="">
+              <img :src="`img/avatar${user.avatar}.jpg`" alt="user.name">
             </div>
 
             <div class="contatto-info">
 
               <h3>
-                <span>Michele</span>
-                <span class="contatto-data">20/20/2020 20:20:20</span>
+                <span>{{user.name}}</span>
+                <span class="contatto-data"
+                      
+                      >
+                      {{user.messages[user.messages.length - 1].date}}
+                </span>
               </h3>
 
-              <p>Tutto fatto!</p>
+              <p>
+                 {{user.messages[user.messages.length - 1].message}}
+              </p>
 
             </div>
             
-
-          </div>
-
-          <div class="contatto">
-
-            <div class="contatto-logo">
-              <img src="img/avatar_3.jpg" alt="">
-            </div>
-
-            <div class="contatto-info">
-
-              <h3>
-                <span>Michele</span>
-                <span class="contatto-data">20/20/2020 20:20:20</span>
-              </h3>
-
-              <p>Tutto fatto!</p>
-
-            </div>
-            
-
           </div>
          
-          
         </div>
         <!-- /COL-LEFT - CONTATTI -->
 
@@ -146,21 +134,23 @@
 
 
         <!-- /COL-RIGHT - CHATZONE -->
-        <div class="chatzone debug-green full">
-          
-          <div class="messaggio sent">
+        <div  class="chatzone debug-green full"
+        >
+          <div  v-for="(text, index) in utenti[utenteAttivo].messages"
+                class="messaggio"
+                :class="text.status">
 
-            <div class="messaggio-testo">ciao  bello de casa</div>
-            <div class="messaggio-data">20/20/2020 20:00:00</div>
+            <div class="messaggio-testo">{{text.message}}</div>
+            <div class="messaggio-data">{{text.date}}</div>
 
           </div>
 
-          <div class="messaggio received">
+          <!-- <div class="messaggio received">
 
             <div class="messaggio-testo">ciao bello de casa</div>
             <div class="messaggio-data">20/20/2020 20:00:00</div>
 
-          </div>
+          </div> -->
 
         </div>
         <!-- /COL-RIGHT - CHATZONE -->
@@ -169,21 +159,19 @@
         <!-- COL-RIGHT - CHATZONE -->
         <div class="chatbar">
           <i class="fa-regular fa-face-smile"></i>
-          <input v-model="" type="text" placeholder="Scrivi un messaggio">
+          <input type="text" placeholder="Scrivi un messaggio">
           <i class="fa-solid fa-microphone"></i>
         </div>
         <!-- /COL-RIGHT - CHATZONE -->
         
       </section>
       <!-- /COL-RIGHT -->
-
+      
     </main>
 
-    <footer></footer>
-
-    <script src="js/script.js"></script>
-
   </div>
+  
+  <script src="js/script.js"></script>
 
 </body>
 </html>

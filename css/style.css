@@ -94,7 +94,6 @@ header {
 
 .notifiche {
   background-color: #8EDAFB;
-  height: 100px;
   display: flex;
   align-items: center;
 }
@@ -157,6 +156,11 @@ header {
   border-bottom: 1px solid #AFB0B0;
 }
 
+.contatto-selezionato {
+  background-color: #6D7478;
+  color: #000000;
+}
+
 .contatto-logo img {
   width: 65px;
   margin: 0 18px;
@@ -188,12 +192,11 @@ header {
 .utente-chat {
   display: flex;
   align-items: center;
-  height: 90px;
   background-color: #E9E9E9;
 }
 
 .utente-immagine {
-  margin: 0 8px;
+  margin: 11px 8px;
 }
 
 .utente-immagine img{
