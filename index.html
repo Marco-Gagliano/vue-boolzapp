@@ -74,7 +74,9 @@
         <!-- COL-LEFT - RICERCA -->
         <div class="ricerca">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input v-model.trim="ricercaUtente"  type="text" placeholder="Cerca o inizia una nuova chat">
+            <input v-model.trim="ricercaUtente"
+                  @keyup="filtraUtenti()"        
+            type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <!-- /COL-LEFT - RICERCA -->
 
@@ -84,7 +86,7 @@
 
           <div  class="contatto" 
                 v-for="(user, index) in utenti" 
-                v-show="user.visible"
+                v-show="user.visible === true"
                 :class="utenteAttivo === index ? 'contatto-selezionato' : '' "
                 @click="utenteAttivo = index">
 
@@ -101,11 +103,15 @@
                 </span>
               </h3>
 
-              <p>
+              <span>
                  {{user.messages[user.messages.length - 1].message}}
-              </p>
+              </span>
+              
+              
 
             </div>
+
+            
             
           </div>
          
@@ -128,7 +134,7 @@
           
           <div class="utente-accesso">
             <h3>{{utenti[utenteAttivo].name}}</h3>
-            <p>ultimo accesso oggi alle</p>
+            <p>ultimo accesso oggi alle {{ultimoAccessoUtente}}</p>
           </div>
 
           <div class="utente-allegati">

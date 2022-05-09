@@ -12,6 +12,10 @@ body {
   background-color: #AFB0B0;
 }
 
+i {
+  cursor: pointer;
+}
+
 .chatbox {
   position: absolute;
   top: 45%;
@@ -156,8 +160,12 @@ header {
   border-bottom: 1px solid #AFB0B0;
 }
 
+.contatto:hover {
+  cursor: pointer;
+  background-color: #CFCFCF;
+}
 .contatto-selezionato {
-  background-color: #6D7478;
+  background-color: #CFCFCF;
   color: #000000;
 }
 
@@ -172,6 +180,11 @@ header {
   font-size: 10px;
   float: right;
   margin-right: 5px;
+}
+
+.contatto-info i {
+  float: right;
+  margin-right: 8px;
 }
 
 /* /COL-LEFT - CONTATTI*/
@@ -242,14 +255,15 @@ header {
   padding: 20px;
   position: relative;
   clear: both;
+  color: #FFFFFF;
 }
 
 .chatzone .sent {
-  background-color: green;
+  background-color: #20461e;
   float: right;
 }
 .chatzone .received {
-  background-color: rgb(146, 255, 146);
+  background-color: #383838;
   float: left;
 }
 

@@ -42,6 +42,9 @@ const app = new Vue({
     utenteAttivo: 0,
     ricercaUtente: '',
     nuovoMessaggio: '',
+    orarioCorrente: dayjs().format('DD/MM/YYYY HH:MM:ss'),
+    ultimoAccessoUtente: dayjs().format('HH:MM'),
+    
 
     users: 
       {
@@ -224,7 +227,7 @@ const app = new Vue({
 
       const nuovoOggetto = 
         {
-        date: '03/01/2022 20:20:55',
+        date: this.orarioCorrente,
         message: this.nuovoMessaggio,
         status: 'sent'
         }
@@ -237,28 +240,44 @@ const app = new Vue({
     },
 
     riceviMessaggio() {
-     setTimeout(()=> {
-       const riceviMessaggio = 
-       {
-        date: '03/01/2022 20:20:55',
-        message: 'Ok!',
-        status: 'received'
-      }
+      setTimeout(()=> {
 
-      this.utenti[this.utenteAttivo].messages.push(riceviMessaggio);
+        const riceviMessaggio = 
+        {
+          date: this.orarioCorrente,
+          message: 'Ok!',
+          status: 'received'
+        }
+
+        this.utenti[this.utenteAttivo].messages.push(riceviMessaggio);
+
+      },1500 )
+    },
+
+    // MILESTONE 4 - MODIFICATO E RICREATO CON STEFANO E GIOVANNI
+    filtraUtenti() {
+
+      this.utenti.forEach ( (utente) => {
+        // console.log(utente.name.toLowerCase().includes(this.ricercaUtente.toLowerCase()));
+        // console.log(utente.name);
+        // console.log('------------------------');
+
+        utente.visible = utente.name.toLowerCase().includes(this.ricercaUtente.toLowerCase());
 
 
-     },1000)
-     },
+        // if ( utente.name.toLowercase().includes( this.ricercaUtente.toLowerCase() ) )  {
+        //   utente.visible = true;
+        // }
+        // else {  
+        //   utente.visible = false;
+        // }
 
-     ricercaUtente () {
-       
-     }
+      })
+    },
+
+    
+  }
 
 
-    }
-  
-  
-  
-
-});
+  }
+);
