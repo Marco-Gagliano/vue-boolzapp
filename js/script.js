@@ -28,6 +28,11 @@ l’elenco degli utenti deve essere generato con un v-for e stampare almeno il n
 provate sia con tanti e pochi messaggi con messaggi lunghi o corti. La pagina non si deve mai spaccare.
 
 */
+
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+dayjs.extend(window.dayjs_plugin_relativeTime);
+dayjs.locale('it');
+
 const app = new Vue({
 
   el: '#app',
@@ -244,7 +249,13 @@ const app = new Vue({
 
 
      },1000)
+     },
+
+     ricercaUtente () {
+       
      }
+
+
     }
   
   
