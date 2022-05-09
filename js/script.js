@@ -275,7 +275,9 @@ const app = new Vue({
       })
     },
 
-    
+    rimuoviUtente (index) {
+      this.utenti.splice(index, 1);
+    }
   }
 
 

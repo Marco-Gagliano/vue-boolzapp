@@ -94,7 +94,7 @@
               <img :src="`img/avatar${user.avatar}.jpg`" alt="user.name">
             </div>
 
-            <div class="contatto-info">
+            <div v-if="utenti.length > 0"  class="contatto-info">
 
               <h3>
                 <span>{{user.name}}</span>
@@ -107,11 +107,11 @@
                  {{user.messages[user.messages.length - 1].message}}
               </span>
               
-              
+              <i @click="rimuoviUtente(index)" class="fa-solid fa-trash-can"></i>
 
             </div>
 
-            
+            <h4 v-else>Non ci sono contatti</h4>
             
           </div>
          
