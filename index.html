@@ -41,7 +41,7 @@
         <div class="nome-utente">
 
           <div class="nome-utente-sx">
-            <img src="img/avatar_1.jpg" alt="">
+            <img src="img/avatar_io.jpg" alt="">
             <span>{{users.name}}</span>
           </div>
           
@@ -64,7 +64,7 @@
 
           <div>
             <h4>Ricevi notifiche di nuovi messaggi</h4>
-            <p class="notifiche-desktop">Attiva notifiche desktop</p>
+            <p @click="notificheDesktop()" class="notifiche-desktop">Attiva notifiche desktop</p>
           </div>
 
         </div>
@@ -74,9 +74,10 @@
         <!-- COL-LEFT - RICERCA -->
         <div class="ricerca">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input v-model.trim="ricercaUtente"
-                  @keyup="filtraUtenti()"        
-            type="text" placeholder="Cerca o inizia una nuova chat">
+            <input  v-model.trim="ricercaUtente"
+                    @keyup="filtraUtenti()"        
+                    type="text" 
+                    placeholder="Cerca o inizia una nuova chat">
         </div>
         <!-- /COL-LEFT - RICERCA -->
 
@@ -84,6 +85,7 @@
         <!-- COL-LEFT - CONTATTI -->
         <div class="contatti full">
 
+          <!-- V-FOR=  serve per ciclare un array e un oggetto. consente di stampare ciò che vogliamo n volte in base ai valori che contiene il nostro array o oggetto -->
           <div  class="contatto" 
                 v-for="(user, index) in utenti" 
                 v-show="user.visible === true"
@@ -94,6 +96,7 @@
               <img :src="`img/avatar${user.avatar}.jpg`" alt="user.name">
             </div>
 
+            <!-- RIGA 100 da debuggare -->
             <div v-if="utenti.length > 0"  class="contatto-info">
 
               <h3>
@@ -149,11 +152,12 @@
 
         <!-- /COL-RIGHT - CHATZONE -->
         <div  class="chatzone debug-green full">
+
           <div  v-for="(text, index) in utenti[utenteAttivo].messages"
                 class="messaggio"
                 :class="text.status">
-
             <div class="messaggio-testo">{{text.message}}</div>
+
             <div class="messaggio-data">{{text.date}}</div>
 
           </div>
@@ -170,14 +174,13 @@
         
 
         <!-- COL-RIGHT - CHATBAR -->
-        <div class="chatbar"
+        <div  class="chatbar"
               @keyup.enter="inviaMessaggio()">
 
           <i class="fa-regular fa-face-smile"></i>
           <input v-model="nuovoMessaggio" type="text" placeholder="Scrivi un messaggio">
           <i class="fa-solid fa-microphone"></i>
         </div>
-
         <!-- /COL-RIGHT - CHATBAR -->
         
       </section>
